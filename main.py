@@ -35,7 +35,7 @@ from dashboard_server import bot_state, start_web_dashboard
 
 # ==================== CONFIGURATION ====================
 WEB_HOST = "0.0.0.0"
-WEB_PORT = 20335
+WEB_PORT = 10000
 ACCOUNTS_FILE = "accounts.json"
 TOKEN_CACHE_FILE = "token_cache.json"
 DEVICES_FILE = "devices.json"  # 🔥 NEW: Persistent device storage
